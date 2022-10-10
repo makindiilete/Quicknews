@@ -1,0 +1,20 @@
+{
+  "cli": {
+    "version": ">= 0.46.0"
+  },
+  "build": {
+    "production": {
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    "development": {
+      "extends": "production",
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    }
+  }
+}
