@@ -22,7 +22,7 @@ function HomeNavigator() {
         style={{
           display: "flex",
           flexDirection: "row",
-          justifyContent: "space-between",
+          justifyContent: "space-around",
           width: "100%",
         }}
       >
@@ -30,7 +30,7 @@ function HomeNavigator() {
           style={{
             fontWeight: "bold",
             fontSize: 16,
-            marginLeft: widthPercentageToDP(40),
+            marginLeft: widthPercentageToDP(30),
           }}
         >
           {props.children}

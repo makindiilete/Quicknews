@@ -2,7 +2,7 @@
   "expo": {
     "name": "Quick news",
     "slug": "quick_news",
-    "version": "1.0.13",
+    "version": "1.0.14",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -20,11 +20,11 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.makindiilete.quicknews",
-      "buildNumber": "1.0.13"
+      "buildNumber": "1.0.14"
     },
     "android": {
       "package": "com.makindiilete.quicknews",
-      "versionCode": 13,
+      "versionCode": 14,
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#FFFFFF"
