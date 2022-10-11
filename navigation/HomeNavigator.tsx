@@ -17,7 +17,6 @@ const Stack = createStackNavigator();
 function HomeNavigator() {
   const dispatch = useDispatch<any>();
   const Title = (props: any) => {
-    console.log({ props });
     return (
       <View
         style={{

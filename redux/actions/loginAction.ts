@@ -1,5 +1,8 @@
 import { Dispatch } from "redux";
 import { actionType } from "../actionTypes";
+import * as SQLite from "expo-sqlite";
+
+const db = SQLite.openDatabase("db.db");
 const loggingIn = () => ({
   type: actionType.LOGGING_IN,
 });
@@ -20,12 +23,21 @@ export const loginAction =
   (email: string, password: string) => (dispatch: Dispatch) => {
     dispatch(loggingIn());
     try {
-      console.log(email, password);
-      setTimeout(() => {
-        dispatch(loggingSuccessful({ email, password }));
-      }, 2000);
+      db.transaction((tx) => {
+        tx.executeSql(
+          `select * from users where email = ?;`,
+          [email],
+          (_, { rows }) => {
+            console.log(rows?._array);
+            if (rows?._array.length > 0) {
+              dispatch(loggingSuccessful({ email, password }));
+            } else {
+              dispatch(loggingFailed());
+            }
+          }
+        );
+      });
     } catch (error) {
-      console.log(error);
       dispatch(loggingFailed());
     }
   };

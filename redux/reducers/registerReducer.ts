@@ -1,6 +1,7 @@
 /* eslint-disable comma-dangle */
 
 import { actionType } from "../actionTypes";
+import { Alert } from "react-native";
 
 let registerState: {
   loading: boolean;
@@ -33,6 +34,7 @@ export const registerReducer = (
       return state;
     case actionType.REGISTERING_IN_FAILED:
       state = { ...state, loading: false, error: "Something went wrong" };
+      Alert.alert("Sorry", "Something went wrong");
       return state;
     default:
       return state;

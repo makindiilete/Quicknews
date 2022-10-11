@@ -6,6 +6,9 @@ import * as Font from "expo-font";
 import { store } from "./redux";
 import AppRootContainer from "./navigation/AppRootContainer";
 import Colors from "./constants/Colors";
+import * as SQLite from "expo-sqlite";
+
+const db = SQLite.openDatabase("db.db");
 
 const customFonts = {
   "font-bold": require("./assets/fonts/Eina03-Bold.ttf"),
@@ -28,6 +31,15 @@ const theme = {
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
+
+  const createDB = () => {
+    db.transaction((tx) => {
+      tx.executeSql(
+        "create table if not exists users (id integer primary key not null, email text, password text);"
+      );
+    });
+  };
+
   useEffect(() => {
     async function prepare() {
       try {
@@ -41,6 +53,7 @@ export default function App() {
         // Tell the application to render
         await Font.loadAsync(customFonts);
         setAppIsReady(true);
+        createDB();
         await SplashScreen.hideAsync();
       }
     }

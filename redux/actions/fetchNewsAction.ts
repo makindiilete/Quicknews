@@ -32,7 +32,6 @@ export const fetchNewsAction =
       const stories = await Promise.all(
         storyIds.slice(0, newsCount).map((storyId: string) => getStory(storyId))
       );
-      console.log({ stories });
       dispatch(fetchedNewsSuccessful(stories));
     } catch (error) {
       dispatch(fetchedNewsFailed());

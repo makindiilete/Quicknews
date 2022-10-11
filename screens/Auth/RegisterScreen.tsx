@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useNavigation } from "@react-navigation/native";
+import React, { useCallback, useEffect, useState } from "react";
+import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import { Text, View, Alert } from "react-native";
 import { AppContainer } from "../../components/AppContainer/AppContainer";
 import { AppScreen } from "../../components/AppScreen/AppScreen";
@@ -17,6 +17,7 @@ export function RegisterScreen() {
     password: "",
     confirmPassword: "",
   });
+
   const handleSubmit = () => {
     if (
       register.email === "" ||
@@ -27,6 +28,7 @@ export function RegisterScreen() {
     }
     dispatch(registerAction(register.email, register.password));
   };
+
   return (
     <AppScreen>
       <AppContainer>
