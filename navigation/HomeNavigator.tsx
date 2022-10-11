@@ -1,5 +1,5 @@
 import React from "react";
-import { createStackNavigator } from "@react-navigation/stack";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import routes from "./routes";
 import { HomeScreen } from "../screens/Home/HomeScreen";
 import { Text, View } from "react-native";
@@ -12,7 +12,7 @@ import {
 import { useDispatch } from "react-redux";
 import { logoutAction } from "../redux/actions/loginAction";
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator<any>();
 
 function HomeNavigator() {
   const dispatch = useDispatch<any>();
