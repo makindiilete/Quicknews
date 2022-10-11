@@ -4,6 +4,7 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "publish": "NODE_ENV=development expo publish",
+    "build": "eas build -p android --profile development",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
