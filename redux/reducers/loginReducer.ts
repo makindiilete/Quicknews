@@ -1,6 +1,7 @@
 /* eslint-disable comma-dangle */
 
 import { actionType } from "../actionTypes";
+import { Alert } from "react-native";
 
 let logInState: {
   loading: boolean;
@@ -33,6 +34,7 @@ export const loginReducer = (
       return state;
     case actionType.LOGGING_IN_FAILED:
       state = { ...state, loading: false, error: "Something went wrong" };
+      Alert.alert("Sorry", "Invalid login details");
       return state;
     case actionType.LOG_OUT:
       state = { ...state, loading: false, error: null, isLoggedIn: false };

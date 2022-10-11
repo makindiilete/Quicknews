@@ -26,7 +26,12 @@ export function RegisterScreen() {
     ) {
       return Alert.alert("Sorry", "Please complete the form to proceed!");
     }
-    dispatch(registerAction(register.email, register.password));
+    dispatch(
+      registerAction(
+        register.email.toLowerCase().trim(),
+        register.password.trim()
+      )
+    );
   };
 
   return (

@@ -21,7 +21,9 @@ export function LoginScreen() {
     if (login.email === "" || login.password === "") {
       return Alert.alert("Sorry", "Please complete the form to proceed!");
     }
-    dispatch(loginAction(login.email, login.password));
+    dispatch(
+      loginAction(login.email.toLowerCase().trim(), login.password.trim())
+    );
   };
   return (
     <AppScreen>
