@@ -8,6 +8,13 @@
         "NODE_ENV": "production"
       }
     },
+    "release": {
+      "extends": "production",
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      }
+    },
     "development": {
       "extends": "production",
       "developmentClient": true,

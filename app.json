@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "quicknews",
-    "slug": "quicknews",
+    "name": "Quick news",
+    "slug": "quick_news",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -18,9 +18,13 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.makindiilete.quicknews",
+      "buildNumber": "1.0.0"
     },
     "android": {
+      "package": "com.makindiilete.quicknews",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#FFFFFF"
@@ -28,6 +32,11 @@
     },
     "web": {
       "favicon": "./assets/icon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "6641190b-dbc4-45d8-899f-d3b61ca5adf4"
+      }
     }
   }
 }
